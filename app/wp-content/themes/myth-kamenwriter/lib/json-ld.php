@@ -37,8 +37,8 @@ function set_bread_json()
                 "@type" => "ListItem",
                 "position" => 2,
                 "item" => array(
-                    "@id" => esc_url(home_url('/memo')),
-                    "name" => esc_attr('メモ')
+                    "@id" => esc_url(home_url('/tale')),
+                    "name" => esc_attr('お話')
                 )
             );
             $child[] = array(
@@ -55,8 +55,8 @@ function set_bread_json()
                 "@type" => "ListItem",
                 "position" => 2,
                 "item" => array(
-                    "@id" => esc_url(home_url('/memo')),
-                    "name" => esc_attr('メモ')
+                    "@id" => esc_url(home_url('/tale')),
+                    "name" => esc_attr('お話')
                 )
             );
             $array = array_merge($array, $parent);
@@ -77,8 +77,8 @@ function set_bread_json()
                 "@type" => "ListItem",
                 "position" => 2,
                 "item" => array(
-                    "@id" => esc_url(home_url('/memo')),
-                    "name" => esc_attr('メモ')
+                    "@id" => esc_url(home_url('/tale')),
+                    "name" => esc_attr('お話')
                 )
             );
             $single[] = array(
@@ -118,7 +118,7 @@ function set_content_json()
         $img_w = '1200';
         $img_h = '630';
     }
-    $cat_name = 'メモ';
+    $cat_name = 'お話';
     $array = array(
         "@context" => "http://schema.org",
         "@type" => "NewsArticle",

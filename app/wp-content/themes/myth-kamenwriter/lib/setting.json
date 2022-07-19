@@ -1,6 +1,6 @@
 {
     "site": {
-        "name": "memo.kamenwriter.com",
+        "name": "myth.kamenwriter.com",
         "keywords": [
             "仮面ライター",
 			"カメンライター",
@@ -10,7 +10,7 @@
             "kamenwriter",
             "maskedwriter"
         ],
-        "description": "仮面ライターの個人的なインプットメモ",
+        "description": "仮面ライターの個人的な民話収集ログ",
         "copy": "Hello, World",
         "lead": "Just another BBN site",
         "gtm": "GTM-T2M6W72",

@@ -21,7 +21,7 @@ function post_has_archive($args, $post_type)
 {
     if ('post' == $post_type) {
         $args['rewrite'] = true;
-        $args['has_archive'] = esc_attr('memo');
+        $args['has_archive'] = esc_attr('tale');
     }
     return $args;
 }
@@ -30,9 +30,9 @@ function change_post_menu_label()
 {
     global $menu;
     global $submenu;
-    $menu[5][0] = esc_attr('メモ');
-    $submenu['edit.php'][5][0] = esc_attr('メモ一覧');
-    $submenu['edit.php'][10][0] = '新しい' . esc_attr('メモ');
+    $menu[5][0] = esc_attr('お話');
+    $submenu['edit.php'][5][0] = esc_attr('お話一覧');
+    $submenu['edit.php'][10][0] = '新しい' . esc_attr('お話');
     $submenu['edit.php'][16][0] = 'タグ';
 }
 
@@ -40,16 +40,16 @@ function change_post_object_label()
 {
     global $wp_post_types;
     $labels = &$wp_post_types['post']->labels;
-    $labels->name = esc_attr('メモ');
-    $labels->singular_name = esc_attr('メモ');
-    $labels->add_new = _x('追加', esc_attr('メモ'));
-    $labels->add_new_item = esc_attr('メモ') . 'の新規追加';
-    $labels->edit_item = esc_attr('メモ') . 'の編集';
-    $labels->new_item = '新規' . esc_attr('メモ');
-    $labels->view_item = esc_attr('メモ') . 'を表示';
-    $labels->search_items = esc_attr('メモ') . 'を検索';
-    $labels->not_found = 'メモが見つかりませんでした';
-    $labels->not_found_in_trash = 'ゴミ箱にメモは見つかりませんでした';
+    $labels->name = esc_attr('お話');
+    $labels->singular_name = esc_attr('お話');
+    $labels->add_new = _x('追加', esc_attr('お話'));
+    $labels->add_new_item = esc_attr('お話') . 'の新規追加';
+    $labels->edit_item = esc_attr('お話') . 'の編集';
+    $labels->new_item = '新規' . esc_attr('お話');
+    $labels->view_item = esc_attr('お話') . 'を表示';
+    $labels->search_items = esc_attr('お話') . 'を検索';
+    $labels->not_found = 'お話が見つかりませんでした';
+    $labels->not_found_in_trash = 'ゴミ箱にお話は見つかりませんでした';
 }
 add_action('init', 'change_post_object_label');
 add_action('admin_menu', 'change_post_menu_label');

@@ -14,16 +14,16 @@ function get_breadcrumb()
         $output .= '<li class="c-bread-list__item" aria-current="page"><a class="c-bread-list__link" href="' . esc_url(get_permalink($post->ID)) . '">' . get_the_title($post->ID) . '</a></li>';
     } elseif (is_archive()) {
         if (is_tag()) {
-            $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/memo') . '">メモ</a></li>';
+            $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/tale') . '">お話</a></li>';
             $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/tag/') . esc_html(single_term_title('', false)) . '" aria-current="page">#' . single_term_title('', false) . '</a></li>';
         } else {
-            $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/memo') . '" aria-current="page">メモ</a></li>';
+            $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/tale') . '" aria-current="page">お話</a></li>';
         }
     } elseif (is_single()) {
         if (is_attachment()) {
             $output .= '<li class="c-bread-list__item"><a href="' . get_permalink($post->ID) .'" class="c-bread-list__link" aria-current="page">'. '添付ファイル：' . wp_title('', false) . '</a></li>';
         } else {
-            $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/memo') . '">メモ</a></li></li><li class="c-bread-list__item"><a href="' . esc_url(get_permalink($post->ID)) . '" class="c-bread-list__link" aria-current="page">' . get_the_title($post->ID) . '</a></li>';
+            $output .= '<li class="c-bread-list__item"><a class="c-bread-list__link" href="' . home_url('/tale') . '">お話</a></li></li><li class="c-bread-list__item"><a href="' . esc_url(get_permalink($post->ID)) . '" class="c-bread-list__link" aria-current="page">' . get_the_title($post->ID) . '</a></li>';
         }
     } elseif (is_404()) {
         $protocol = empty($_SERVER["HTTPS"]) ? "http://" : "https://";

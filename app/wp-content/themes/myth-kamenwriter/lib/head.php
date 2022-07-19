@@ -13,7 +13,7 @@ function set_my_title()
         } elseif (is_tag()) {
             $my_title = '#' . single_tag_title('', false);
         } else {
-            $my_title = 'メモ';
+            $my_title = 'お話';
         }
     } else {
         $my_title = get_the_title();
