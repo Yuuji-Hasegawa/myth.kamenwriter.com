@@ -1,0 +1,19 @@
+@use '../settings' as setting;
+.o-grid {
+  display: grid;
+  &\:pagination {
+    gap: setting.spaces(xs);
+    grid-template: auto / repeat(auto-fit, minmax(min((calc(375px - 100vw) * 999), 2em), auto));
+    justify-content: center;
+  }
+  &\:sidebar {
+    align-items: center;
+    grid-template-columns: 35px 1fr;
+    gap: setting.spaces(2xs);
+    padding: setting.spaces(xs);
+    &:hover,
+    &:focus {
+      background: var(--c-overlay);
+    }
+  }
+}

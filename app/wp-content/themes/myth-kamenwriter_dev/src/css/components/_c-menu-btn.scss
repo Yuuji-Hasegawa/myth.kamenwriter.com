@@ -1,0 +1,128 @@
+@use '../settings' as setting;
+@use '../tools' as tool;
+.c-header-left {
+  display: flex;
+  align-items: center;
+  gap: setting.spaces(3xs);
+}
+.c-header-right {
+  position: relative;
+}
+.c-search {
+  width: 40px;
+	height: 40px;
+	transition: width setting.animes(duration) setting.animes(timing);
+	cursor: pointer;
+	color: transparent;
+	font-size: setting.fontsize(s);
+	line-height: setting.lineheight(body);
+	border-radius: 80px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	border: 1px solid transparent;
+	transform: translateY(-50%);
+	@include tool.placeholder(transparent);
+	+ label {
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 24px;
+		pointer-events: none;
+    line-height: 1;
+	}
+	&:focus {
+		width: calc(100vw - 1rem);
+		max-width: max(calc((540px - 100vw) * 999), 350px);
+		padding: 8px 44px 8px 16px;
+		background: var(--c-bg);
+    border-color: var(--c-txt);
+		color: var(--c-txt);
+		@include tool.placeholder(var(--c-separator));
+	}
+}
+.c-menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 8px 10px;
+}
+.c-sidebar {
+  position: fixed;
+  top: 0;
+  left: calc((240px + setting.spaces(base)) * -1);
+  z-index: 999;
+  box-shadow: 0 0 2px rgba(setting.brandcolor(dark), 0.3);
+  width: 100%;
+  max-width: calc(240px + setting.spaces(base));
+  height: 100vh;
+  pointer-events: none;
+  transition: left setting.animes(duration) setting.animes(timing);
+  background: var(--c-bg);
+  &\:is-open {
+    left: 0;
+    pointer-events: auto;
+    transition: left setting.animes(duration) setting.animes(timing);
+  }
+}
+.c-sidebar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  background: var(--c-txt);
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity setting.animes(duration) setting.animes(timing);
+  .c-sidebar\:is-open + & {
+    pointer-events: auto;
+    display: block;
+    visibility: visible;
+    opacity: setting.animes(opacity);
+    cursor: pointer;
+    transition: opacity setting.animes(duration) setting.animes(timing);
+  }
+}
+body.is-fixed {
+  position: fixed;
+  min-height: 100vh;
+  overflow: hidden;
+  min-width: 100vw;
+}
+.c-sidebar-body {
+  padding-right: setting.spaces(base);
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+.c-side-heading {
+  background: var(--c-dimmed);
+  color: var(--c-bg);
+  font-size: setting.fontsize(m);
+  line-height: setting.lineheight(heading);
+  font-weight: setting.fontweight(m);
+  padding: setting.spaces(xs);
+  margin-right: calc(setting.spaces(base) * -1);
+}
+.c-sideInner-title,
+.c-sideInner-content {
+  line-height: setting.lineheight(heading);
+}
+.c-sideInner-title {
+  font-weight: setting.fontweight(b);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: calc(setting.fontsize(s) * setting.lineheight(heading) * 2);
+  text-overflow: ellipsis;
+}
+.c-sideInner-content {
+}
+.c-time {
+  font-size: setting.fontsize(xs);
+  color:var(--c-dimmed);
+}

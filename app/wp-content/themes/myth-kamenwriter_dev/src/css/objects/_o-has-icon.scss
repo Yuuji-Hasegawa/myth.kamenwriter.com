@@ -1,0 +1,32 @@
+@use '../settings' as setting;
+.o-has-icon {
+  display: inline-flex;
+  align-items: baseline;
+  gap: setting.spaces(3xs);
+  &\:redume {
+    display: flex;
+    font-weight: setting.fontweight(b);
+    background: var(--c-overlay);
+    padding: setting.spaces(xs) setting.spaces(base);
+    margin: calc(setting.spaces(base) * -1) calc(setting.spaces(base) * -1) 0 calc(setting.spaces(base) * -1);
+    position: relative;
+    box-sizing: content-box;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+  }
+  &\:redume-is-open {
+    margin-bottom: setting.spaces(base);
+    border-bottom: solid 1px var(--c-border);
+  }
+}
+.c-redume-marker {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform setting.animes(duration) setting.animes(timing);
+  &\:is-open {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

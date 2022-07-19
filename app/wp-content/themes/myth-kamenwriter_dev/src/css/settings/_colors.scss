@@ -1,0 +1,49 @@
+@use 'sass:map';
+@use 'sass:color';
+
+@function brandcolor($key) {
+  @return map.get($brand-colors, $key);
+}
+
+$brand: #382824;
+$brand-colors: (
+  base: $brand,
+  light: color.adjust($brand, $lightness: 15%, $saturation: -10%, $hue: -1deg),
+  dark: color.adjust($brand, $lightness: -15%, $saturation: 10%, $hue: 1deg),
+) !default;
+
+$grayH: color.hue($brand);
+$grayS: 10%;
+$grayBase: 93%;
+$grayLevel: 11.3%;
+$grayDarkL: $grayBase - $grayLevel * 2;
+$grayL: $grayBase - $grayLevel * 5;
+$grayPaleL: $grayBase - $grayLevel * 7;
+$grayLightness: 93%;
+$grayLightnessIncrement: 11.3%;
+
+@function lightcolor($key) {
+  @return map.get($light-colors, $key);
+}
+
+$light-colors: (
+  bg: color.adjust(#fff, $lightness: -9%, $saturation: 83%, $hue: 60deg),
+  overlay: rgba(color.adjust(hsl($grayH, $grayS, $grayPaleL), $lightness: 4.1%, $saturation: 12%), 0.07),
+  txt: color.adjust(hsl($grayH, $grayS, $grayPaleL), $lightness: 4.1%, $saturation: 12%),
+  dimmed: rgba(color.adjust(hsl($grayH, $grayS, $grayPaleL), $lightness: 4.1%, $saturation: 12%), 0.5),
+  border: rgba(color.adjust(hsl($grayH, $grayS, $grayPaleL), $lightness: 4.1%, $saturation: 12%), 0.1),
+  separator: color.adjust(hsl($grayH, $grayS, $grayDarkL), $lightness: 4.1%, $saturation: 12%),
+);
+
+@function darkcolor($key) {
+  @return map.get($dark-colors, $key);
+}
+
+$dark-colors: (
+  bg: color.adjust(hsl($grayH, $grayS, $grayPaleL), $lightness: 4.1%, $saturation: 12%),
+  overlay: rgba(color.adjust(hsl($grayH, $grayS, $grayBase), $lightness: -9%, $saturation: 83%, $hue: 60deg), 0.07),
+  txt: color.adjust(#fff, $lightness: -9%, $saturation: 83%, $hue: 60deg),
+  dimmed: rgba(color.adjust(hsl($grayH, $grayS, $grayBase), $lightness: -9%, $saturation: 83%, $hue: 60deg), 0.5),
+  border: rgba(color.adjust(hsl($grayH, $grayS, $grayBase), $lightness: -9%, $saturation: 83%, $hue: 60deg), 0.1),
+  separator: color.adjust(hsl($grayH, $grayS, $grayDarkL), $lightness: 4.1%, $saturation: 12%),
+);

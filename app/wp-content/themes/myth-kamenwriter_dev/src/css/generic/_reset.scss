@@ -1,0 +1,78 @@
+@use '../settings' as setting;
+@use '../tools' as tool;
+
+:root {
+  @each $key, $name in setting.$light-colors {
+    --c-#{$key}: #{($name)};
+  }
+  @include tool.darkmode() {
+    @each $key, $name in setting.$dark-colors {
+      --c-#{$key}: #{($name)};
+    }
+  }
+}
+
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+body {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: initial;
+  -webkit-font-feature-settings: 'pkna';
+  font-family: setting.$font-family;
+  font-size: setting.fontsize(s);
+  line-height: setting.lineheight(reset);
+  background-color: var(--c-bg);
+  color: var(--c-txt);
+}
+ol,
+ul {
+  list-style: none;
+}
+p:not(:last-of-type) {
+  margin-block-end: setting.spaces(m);
+}
+
+b,
+strong {
+  font-weight: setting.fontweight(b);
+}
+
+small {
+  font-size: setting.fontsize(xs);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a {
+  color: var(--c-txt);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all setting.animes(duration) setting.animes(timing);
+  &:hover,
+  &:focus {
+    opacity: setting.animes(opacity);
+  }
+}
+svg {
+  flex-shrink: 0;
+  height: 1em;
+  vertical-align: -0.125em;
+  box-sizing: content-box;
+  width: auto;
+}

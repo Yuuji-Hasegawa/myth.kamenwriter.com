@@ -1,0 +1,7 @@
+@use '../settings' as setting;
+.c-header-logo {
+  line-height: 1;
+  font-size: 32px;
+  padding: 4px 8px;
+  color: var(--c-txt);
+}

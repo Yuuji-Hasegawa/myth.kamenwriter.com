@@ -1,0 +1,47 @@
+@use '../settings' as setting;
+.c-large-heading,
+.c-site-title {
+  font-size: clamp(setting.fontsize(l), calc((100vw - 360px) * 999), setting.fontsize(xl));
+  text-align: center;
+  font-weight: setting.fontweight(b);
+  line-height: setting.lineheight(heading);
+  & + * {
+    margin-top: setting.spaces(l);
+  }
+}
+.c-site-title {  
+  font-family: setting.$font-family-nr;
+}
+.c-large-heading {
+  &\:single {
+    text-align: left;
+    font-size: clamp(setting.fontsize(m), calc((100vw - 360px) * 999), setting.fontsize(l));
+  }
+}
+.c-heading {
+  font-weight: setting.fontweight(b);
+  line-height: setting.lineheight(heading);
+  font-size: setting.fontsize(l);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: setting.spaces(xs);
+  font-family: setting.$font-family-nr;
+  & + * {
+    margin-top: setting.spaces(m);
+  }
+  &__font-small {
+    font-size: setting.fontsize(s);
+    font-weight: setting.fontweight(m);
+  }
+}
+.c-clip-title {
+  font-weight: setting.fontweight(m);
+  line-height: setting.lineheight(heading);
+  font-size: setting.fontsize(m);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: calc(setting.fontsize(m) * setting.lineheight(heading) * 2);
+  text-overflow: ellipsis;
+}

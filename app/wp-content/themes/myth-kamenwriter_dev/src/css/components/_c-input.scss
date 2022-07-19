@@ -1,0 +1,31 @@
+@use '../settings' as setting;
+@use '../tools' as tool;
+.c-input {
+  border: 1px solid var(--c-txt);
+  padding: setting.spaces(xs) setting.spaces(s);
+  outline: 1px transparent;
+  outline-offset: -1px;
+  width: 100%;
+  background: var(--c-bg);
+  color: var(--c-txt);
+  resize: none;
+  @include tool.placeholder(var(--c-separator));
+}
+.c-input-copy {
+  display: flex;
+  margin: setting.spaces(m) 0;
+  position: relative;
+}
+.c-copy-message {
+  color: var(--c-bg);
+  display: table;
+  position: absolute;
+  background: var(--c-txt);
+  text-align: center;
+  padding: setting.spaces(xs);
+  font-weight: setting.fontweight(m);
+  top: calc(100% + setting.spaces(s));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}

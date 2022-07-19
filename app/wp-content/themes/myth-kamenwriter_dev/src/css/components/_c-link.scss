@@ -1,0 +1,27 @@
+@use '../settings' as setting;
+.c-link {
+  display: block;
+  font-weight: setting.fontweight(b);
+  &\:breadcrumb {
+    display: inline-block;
+    padding: setting.spaces(xs);
+    font-size: setting.fontsize(xs);
+    font-weight: setting.fontweight(b);
+  }
+  &\:ftNav {
+    color: inherit;
+    font-weight: setting.fontweight(m);
+    padding: setting.spaces(s);
+  }
+  &\:sns {
+    line-height: 1;
+  }
+}
+.c-tag-link {
+  color: inherit;
+  display: inline-flex;
+  &:before {
+    content: '#';
+    margin-right: setting.spaces(3xs);
+  }
+}

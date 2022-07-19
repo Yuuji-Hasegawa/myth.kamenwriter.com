@@ -1,0 +1,68 @@
+{
+    "site": {
+        "name": "memo.kamenwriter.com",
+        "keywords": [
+            "仮面ライター",
+			"カメンライター",
+            "かめんらいたー",
+            "かめんライター",
+            "仮面らいたー",
+            "kamenwriter",
+            "maskedwriter"
+        ],
+        "description": "仮面ライターの個人的なインプットメモ",
+        "copy": "Hello, World",
+        "lead": "Just another BBN site",
+        "gtm": "GTM-T2M6W72",
+        "copyright": "©︎ kamenwriter.com",
+        "theme": "#382824"
+    },
+	"sns": {
+		"fb": "https://www.facebook.com/kamenwriter01/",
+		"tw": "https://twitter.com/kamenwriter02",
+		"instagram": "https://www.instagram.com/bluebnose/",
+		"twcreator": "kamenwriter01",
+		"twsite": "kamenwriter02"
+	},
+    "author": {
+        "name": "サンプル 太郎",
+        "desc": "サンプル太郎の自己紹介。サンプルを表示しています",
+        "fb": "https://www.facebook.com/bluebnose/",
+		"tw": "https://twitter.com/bluebnose",
+		"instagram": "https://www.instagram.com/bluebnose/",
+        "url": "https://bbns.jp"
+    },
+	"company": {
+		"name": "サンプル株式会社",
+		"owner": "サンプル 太郎",
+		"zip": "000-0000",
+		"address": "大阪市北区xx町xx-xx",
+		"mail": {
+			"primary": "info@bbns.jp",
+			"sendonly": "noreply@bbns.jp"
+		},
+		"tel": "000-0000-0000",
+		"fax": "000-0000-0000",
+		"birth": "2022年00月00日",
+		"open": "09:00",
+		"close": "19:00",
+		"dayoff": "土日・祝祭日",
+		"service": [
+			"事業項目1",
+			"事業項目2",
+			"事業項目3",
+			"事業項目4",
+			"事業項目5",
+			"事業項目6"
+		]
+	},
+	"term": {
+		"domain": "bbns.jp",
+		"name": "BBN",
+		"acount": "サンプル太郎",
+		"nouse": "6ヶ月以上",
+		"noreply": "30日間以上",
+		"payterm": "12ヶ月間",
+		"court": "大阪地方裁判所"
+	}
+}

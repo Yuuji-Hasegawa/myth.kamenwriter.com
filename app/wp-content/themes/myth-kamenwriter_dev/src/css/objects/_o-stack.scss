@@ -1,0 +1,22 @@
+@use '../settings' as setting;
+.o-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  &\:xs {
+    gap: setting.spaces(xs);
+  }
+  &\:sideInner {
+    & > * + * {
+      margin-top: setting.spaces(2xs);
+    }
+  }
+  &\:memoItem {
+    & > * + * {
+      margin-top: setting.spaces(xs);
+    }
+  }
+  &\:sidebar {
+    margin-right: calc(setting.spaces(base) * -1);
+  }
+}

@@ -1,0 +1,18 @@
+@use '../settings' as setting;
+@use '../tools' as tool;
+
+.o-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: setting.spaces(base);
+  &\:ftNav {
+    justify-content: center;
+  }
+  &\:sns {
+    gap: setting.spaces(s);
+    margin-top: setting.spaces(xs);
+  }
+  &\:sideTag {
+    margin: setting.spaces(base) calc(setting.spaces(base) * -1) setting.spaces(base) setting.spaces(xs);
+  }
+}

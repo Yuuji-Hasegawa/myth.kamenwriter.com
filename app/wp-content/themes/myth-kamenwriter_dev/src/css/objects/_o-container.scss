@@ -1,0 +1,28 @@
+@use '../settings' as setting;
+.o-container {
+  box-sizing: content-box;
+  padding-left: setting.spaces(base);
+  padding-right: setting.spaces(base);
+  margin-left: auto;
+  margin-right: auto;
+  &\:header {
+    padding: 8px clamp(setting.spaces(3xs), calc(3.5vw - setting.spaces(base)), setting.spaces(base));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--c-border);
+  }
+  &\:footer {
+    text-align: center;
+    border-top: solid 1px var(--c-border);
+    font-size: setting.fontsize(xs);
+  }
+  &\:main {
+    padding-top: setting.spaces(l);
+    padding-bottom: setting.spaces(l);
+    max-width: setting.itemsize(wrapper);
+  }
+}
+.c-copyright {
+  padding: setting.spaces(xs) 0;
+}

@@ -1,0 +1,41 @@
+@use '../settings' as setting;
+.c-bread-list {
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+  gap: setting.spaces(xs);
+  padding: setting.spaces(2xs) 0 setting.spaces(xs);
+  > * {
+    flex-shrink: 0;
+  }
+  &__item {
+    position: relative;
+    &:not(:last-of-type) {
+      &::after {
+        content: '';
+        border-color: var(--c-bg);
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+        content: '';
+        height: 7px;
+        position: absolute;
+        right: -6px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        width: 7px;
+      }
+    }
+  }
+  &__link {
+    line-height: 1;
+    display: inline-block;
+    color: var(--c-bg);
+    padding: setting.spaces(xs);
+    font-size: setting.fontsize(xs);
+    font-weight: setting.fontweight(b);
+  }
+}
+.c-bread-wrap {
+  padding: 0 clamp(setting.spaces(2xs), calc(3.5vw - setting.spaces(base)), setting.spaces(base));
+  background: var(--c-txt);
+}
