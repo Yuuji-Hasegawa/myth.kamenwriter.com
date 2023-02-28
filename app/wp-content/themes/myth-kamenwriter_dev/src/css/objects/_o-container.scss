@@ -16,6 +16,8 @@
     text-align: center;
     border-top: solid 1px var(--c-border);
     font-size: setting.fontsize(xs);
+    position: sticky;
+    top: 100vh;
   }
   &\:main {
     padding-top: setting.spaces(l);

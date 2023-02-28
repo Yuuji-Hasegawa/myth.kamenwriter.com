@@ -71,7 +71,8 @@ if (have_posts()):?>
                     datetime="<?php the_modified_time('Y-m-d'); ?>"><?php the_modified_time('Y年m月d日'); ?></time></span>
         </div>
     </div>
-    <?php endwhile; echo get_post_tags();?>
+    <?php endwhile;
+echo get_post_tags();?>
     <div class="c-input-copy">
         <input id="shareURL" class="c-input c-input:share" type="text"
             value="<?php echo esc_url(get_permalink($post->ID));?>"
@@ -82,14 +83,13 @@ if (have_posts()):?>
         <div class="c-author-pict">
             <picture class="o-frame o-frame:square">
                 <source
-                    data-srcset="<?php echo get_template_directory_uri();?>/img/profile.avif"
+                    srcset="<?php echo get_template_directory_uri();?>/img/profile.avif"
                     type="image/avif" />
                 <source
-                    data-srcset="<?php echo get_template_directory_uri();?>/img/profile.webp"
+                    srcset="<?php echo get_template_directory_uri();?>/img/profile.webp"
                     type="image/webp" />
-                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                    data-src="<?php echo get_template_directory_uri();?>/img/profile.png"
-                    alt="" />
+                <img src="<?php echo get_template_directory_uri();?>/img/profile.png"
+                    loading="lazy" decoding="async" alt="" width="100%" height="100%" />
             </picture>
         </div>
         <dl class="o-stack o-stack:xs">
@@ -99,7 +99,7 @@ if (have_posts()):?>
                 デジタルゲーム学科卒業。<br />2013年から仮面ライターとしてWeb制作に従事。<br />アマチュアの物書きとして、執筆活動のほか、言語や人間社会、記号論を理系、文系の両方の立場から考えるのも最近の趣味。
                 <div class="o-cluster o-cluster:sns">
                     <a href="https://www.facebook.com/yuuji.hasegawa" class="c-link c-link:sns" target="_blank"
-                        rel="noopener">
+                        rel="noopener" aria-label="go to Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path
@@ -107,8 +107,8 @@ if (have_posts()):?>
                                 fill="currentColor" />
                         </svg>
                     </a>
-                    <a href="https://twitter.com/kamenwriter01" class="c-link c-link:sns" target="_blank"
-                        rel="noopener">
+                    <a href="https://twitter.com/kamenwriter01" class="c-link c-link:sns" target="_blank" rel="noopener"
+                        aria-label="go to Twitter">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path
@@ -117,7 +117,7 @@ if (have_posts()):?>
                         </svg>
                     </a>
                     <a href="https://www.instagram.com/kamenwriter/" class="c-link c-link:sns" target="_blank"
-                        rel="noopener">
+                        rel="noopener" aria-label="go to Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path
@@ -130,4 +130,6 @@ if (have_posts()):?>
         </dl>
     </footer>
 </article>
-<?php endif;get_footer();
+<?php endif;
+get_footer();
+?>

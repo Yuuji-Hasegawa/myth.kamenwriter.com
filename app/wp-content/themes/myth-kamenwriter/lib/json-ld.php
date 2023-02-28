@@ -161,3 +161,15 @@ function set_content_json()
         return $array;
     }
 }
+function set_front_json()
+{
+    $array = array(
+      "@context" => "http://schema.org",
+      "@type" => "WebSite",
+      "name" => get_bloginfo('name'),
+      "url" => esc_url(home_url('/'))
+    );
+    if ($array) {
+        return $array;
+    }
+}

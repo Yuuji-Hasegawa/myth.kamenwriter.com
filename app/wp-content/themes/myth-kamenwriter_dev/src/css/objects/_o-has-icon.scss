@@ -14,10 +14,10 @@
     width: 100%;
     cursor: pointer;
     align-items: center;
-  }
-  &\:redume-is-open {
-    margin-bottom: setting.spaces(base);
-    border-bottom: solid 1px var(--c-border);
+    .c-redume[open] & {
+      margin-bottom: setting.spaces(base);
+      border-bottom: solid 1px var(--c-border);
+    }
   }
 }
 .c-redume-marker {
@@ -26,7 +26,7 @@
   top: 50%;
   transform: translateY(-50%);
   transition: transform setting.animes(duration) setting.animes(timing);
-  &\:is-open {
+  .c-redume[open] & {
     transform: translateY(-50%) rotate(180deg);
   }
 }

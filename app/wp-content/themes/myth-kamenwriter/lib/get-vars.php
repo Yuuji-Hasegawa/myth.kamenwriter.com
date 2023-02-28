@@ -5,13 +5,12 @@ function get_thumb()
     global $post;
     $output = '<picture class="o-frame">';
     if (has_post_thumbnail()) {
-        $output .= '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="' . get_the_post_thumbnail_url($post->ID, 'full') . '" decoding="async" alt="" width="100%" height="100%" alt="" />';
+        $output .= '<img src="' . get_the_post_thumbnail_url($post->ID, 'full') . '" loading="lazy" decoding="async" alt="" width="100%" height="100%" />';
     } else {
         $output .= '
-            <source data-srcset="' . get_template_directory_uri() . '/img/thumb.avif" type="image/avif" />
-                    <source data-srcset="' . get_template_directory_uri() . '/img/thumb.webp" type="image/webp" />
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                        data-src="' . get_template_directory_uri() . '/img/thumb.png" alt="" />';
+            <source srcset="' . get_template_directory_uri() . '/img/thumb.avif" type="image/avif" />
+                    <source srcset="' . get_template_directory_uri() . '/img/thumb.webp" type="image/webp" />
+                    <img src="' . get_template_directory_uri() . '/img/thumb.png" loading="lazy" decoding="async" alt="" width="100%" height="100%" />';
     }
     $output .= '</picture>';
     return $output;

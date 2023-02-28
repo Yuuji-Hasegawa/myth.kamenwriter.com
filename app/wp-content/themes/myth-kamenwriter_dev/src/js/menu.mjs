@@ -13,6 +13,7 @@ export const menu = () => {
     document.body.style.top = -1 * nowscroll + 'px';
     sidebar.setAttribute('aria-hidden', 'false');
     sidebar.classList.add('c-sidebar:is-open');
+    sidebar.setAttribute("tabindex", "");
     document.body.classList.add('is-fixed');
   }
   function close() {
@@ -27,8 +28,13 @@ export const menu = () => {
     }
     sidebar.setAttribute('aria-hidden', 'true');
     sidebar.classList.remove('c-sidebar:is-open');
+    sidebar.setAttribute("tabindex", "-1");
     document.body.classList.remove('is-fixed');
-    window.scrollTo(0, pos);
+    window.scrollTo({
+      top: pos,
+      left: 0,
+      behavior: "instant" /* css smooth-scroll の影響をカット */,
+    });
   }
   btn.forEach((target) => {
     target.addEventListener('click', () => {

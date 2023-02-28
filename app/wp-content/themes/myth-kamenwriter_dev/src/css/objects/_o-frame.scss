@@ -1,12 +1,11 @@
 @use '../settings' as setting;
 .o-frame {
-  padding-bottom: calc((4 / 3) * 100%);
+  width: 100%;
   position: relative;
   aspect-ratio: 3/4;
   display: block;
   &\:square {
     aspect-ratio: 1/1;
-    padding-bottom: calc((1 / 1) * 100%);
   }
   > * {
     overflow: hidden;

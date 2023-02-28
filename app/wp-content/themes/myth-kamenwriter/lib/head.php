@@ -147,6 +147,7 @@ function add_head()
     $inserts .= my_robots();
     $inserts .= '<link rel="canonical" href="' . get_my_canonical() . '">';
     $inserts .= my_ogp();
+    $inserts .= '<link rel="icon" href="' . get_template_directory_uri() . '/favicon.svg" size="any" />';
     $inserts .= '<link rel="icon" href="' . get_template_directory_uri() . '/favicon.ico" />';
     $inserts .= '<link rel="apple-touch-icon" sizes="180×180" href="' .  home_url() . '/pwa/icons/icon-180x180.png" />';
     $inserts .= '<meta name="theme-color" content="#201a2e" />';

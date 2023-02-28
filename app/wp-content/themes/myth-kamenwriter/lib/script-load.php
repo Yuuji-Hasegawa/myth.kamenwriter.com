@@ -25,6 +25,13 @@ function my_script_styles()
     }
 }
 add_action('wp_enqueue_scripts', 'my_script_styles');
+
+function remove_classic_theme_style()
+{
+    wp_dequeue_style('classic-theme-styles');
+}
+add_action('wp_enqueue_scripts', 'remove_classic_theme_style');
+
 add_filter('script_loader_tag', 'add_async', 10, 2);
 
 function add_async($tag, $handle)
@@ -36,6 +43,8 @@ function add_async($tag, $handle)
     $jsonLD = '<script type="application/ld+json">';
     if (is_single()) {
         $jsonLD .= '[' . json_encode(set_bread_json()) . ',' . json_encode(set_content_json()) . ']';
+    } elseif (is_front_page()) {
+        $jsonLD .= '[' . json_encode(set_front_json()) . ',' . json_encode(set_bread_json()) . ']';
     } else {
         $jsonLD .= json_encode(set_bread_json());
     }
@@ -54,6 +63,6 @@ function add_async($tag, $handle)
     }
     </script>
     EOF;
-    $replace = '<script> var path ="' . get_template_directory_uri() . '";</script>' . $tag . $pwascripts . $jsonLD;
+    $replace = $tag . $pwascripts . $jsonLD;
     return str_replace(' src=', ' defer src=', $replace);
 }
